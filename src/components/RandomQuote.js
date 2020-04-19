@@ -21,12 +21,13 @@ class RandomQuote extends React.Component {
             simpsons: sampleSimpson[0],
         };
     
-        this.getQuote.bind(this);
+        this.getQuote=this.getQuote.bind(this);
    
     }
 
-    getQuote = () => {
-        axios.get('https://simpsons-quotes-api.herokuapp.com/quotes')
+    getQuote () {
+        axios
+        .get('https://simpsons-quotes-api.herokuapp.com/quotes')
         .then(response => response.data)
         .then(data => {
             this.setState({
